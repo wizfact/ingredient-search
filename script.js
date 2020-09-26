@@ -54,9 +54,11 @@ function getRecipeById(mealID){
     <div class = "single-meal">
       <h1>${data['recipe_name']}</h1>
       <div class = "directions">
-        <p>${data['recipe_directions']}</p>
         <h2>Ingredients</h2>
-        <p>${data['recipe_ingredients']}</p>        
+        <p>${data['recipe_ingredients']}</p> 
+        <h2>Directions</h2>
+        <p>${data['recipe_directions']}</p>
+               
       </div>
     </div>`;
   })
@@ -77,6 +79,8 @@ mealsEl.addEventListener('click',e =>{
 
   if(mealInfo){
     const mealID = mealInfo.getAttribute('data-mealID');
+    //clear recipes
+    mealsEl.innerHTML = ""
     getRecipeById(mealID);
   }
 });
